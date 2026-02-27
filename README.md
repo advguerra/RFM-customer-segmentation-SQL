@@ -224,3 +224,20 @@ ORDER BY Avg_Revenue_Per_Customer DESC;
 
 **Purpose:**  
 Calculates customer-level revenue efficiency and identifies high-value segments.
+
+---
+
+# 📂 Full SQL Script
+
+The complete SQL logic used to build the RFM model, generate segmentation, and calculate all business metrics is available here:
+
+📎 [`SQL/rfm_customer_segmentation.sql`](SQL/rfm_customer_segmentation.sql)
+
+This file contains:
+
+- RFM metric calculations
+- Score assignment logic
+- Segment classification CASE statements
+- Revenue aggregation queries
+
+Feel free to explore the full query structure and scoring methodology.
