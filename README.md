@@ -231,7 +231,7 @@ Calculates customer-level revenue efficiency and identifies high-value segments.
 
 The complete SQL logic used to build the RFM model, generate segmentation, and calculate all business metrics is available here:
 
-📎 [`SQL/rfm_customer_segmentation.sql`](SQL/rfm_customer_segmentation.sql)
+📎 [`SQL/RFM_customer_segmentation.SQL`](SQL/RFM_customer_segmentation.SQL)
 
 This file contains:
 
