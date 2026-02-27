@@ -170,3 +170,57 @@ This RFM analysis reveals:
 - Churn Risk Assessment
 - Business Strategy Translation
 - Data-Driven Decision Making
+
+# 📎 Key SQL Queries
+
+Below are the core queries used to generate the main business metrics.
+
+---
+
+## 1️⃣ Customer Segmentation Distribution
+
+```sql
+SELECT
+    Segment_Name,
+    COUNT(*) AS Total_Customers,
+    COUNT(*) * 100.0 / SUM(COUNT(*)) OVER() AS Percent_of_Base
+FROM Final_Score
+GROUP BY Segment_Name
+ORDER BY Total_Customers DESC;
+```
+
+**Purpose:**  
+Calculates customer distribution and percentage representation per segment.
+
+---
+
+## 2️⃣ Revenue Distribution by Segment
+
+```sql
+SELECT
+    Segment_Name,
+    SUM(Monetary) AS Total_Revenue
+FROM Final_Score
+GROUP BY Segment_Name
+ORDER BY Total_Revenue DESC;
+```
+
+**Purpose:**  
+Measures revenue concentration and identifies financially critical segments.
+
+---
+
+## 3️⃣ Average Revenue per Customer (ARPU)
+
+```sql
+SELECT
+    Segment_Name,
+    COUNT(*) AS Customers,
+    SUM(Monetary) / COUNT(*) AS Avg_Revenue_Per_Customer
+FROM Final_Score
+GROUP BY Segment_Name
+ORDER BY Avg_Revenue_Per_Customer DESC;
+```
+
+**Purpose:**  
+Calculates customer-level revenue efficiency and identifies high-value segments.
